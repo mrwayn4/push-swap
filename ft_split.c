@@ -6,7 +6,7 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:12:48 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/27 12:04:56 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/04/27 18:29:13 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static char	**sub_process(const char *s, char c, char **res, int n)
 		length = word_end - word_start;
 		res[word] = (char *)malloc(length + 1);
 		if (!res[word])
-			return (free_memory(res, word));
+			(free_memory(res, word), exit(1));
 		copy_sub(res[word], word_start, 0, length);
 		word++;
 	}
@@ -92,7 +92,7 @@ char	**ft_split(const char *s, char c)
 	num = count_subs(s, c);
 	res = (char **)malloc((num + 1) * sizeof(char *));
 	if (!res)
-		return (NULL);
+		(exit(1));
 	res = sub_process(s, c, res, num);
 	return (res);
 }

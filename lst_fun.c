@@ -6,7 +6,7 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 09:37:31 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/27 12:04:59 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/04/27 18:29:13 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_stack	*ft_lstnew(int content)
 
 	x = malloc(sizeof(t_stack));
 	if (x == 0)
-		return (0);
+		exit(1);
 	x ->value = content;
 	x ->next = NULL;
 	return (x);

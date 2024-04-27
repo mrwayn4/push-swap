@@ -6,7 +6,7 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:44:13 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/27 17:23:32 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/04/27 18:35:15 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct s_stack
 {
 	int				value;
 	int				index;
-	int			position;
+	int				position;
 	struct s_stack	*next;
 }	t_stack;
 

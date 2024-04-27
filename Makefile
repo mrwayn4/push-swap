@@ -6,11 +6,11 @@
 #    By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/25 19:15:36 by ibouram           #+#    #+#              #
-#    Updated: 2024/04/27 11:52:42 by ibouram          ###   ########.fr        #
+#    Updated: 2024/04/27 18:39:11 by ibouram          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = push_swap.c utils.c parcing.c ft_split.c lst_fun.c mini_algo.c big_algo.c sa_sb_ss.c ra_rb_rr.c rra_rrb_rrr.c pa_pb.c
+SRC = mandatory/push_swap.c mandatory/utils.c mandatory/parcing.c mandatory/ft_split.c mandatory/lst_fun.c mandatory/mini_algo.c mandatory/big_algo.c mandatory/sa_sb_ss.c mandatory/ra_rb_rr.c mandatory/rra_rrb_rrr.c mandatory/pa_pb.c
 NAME = push_swap
 
 CC = cc
@@ -24,7 +24,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(FLAGS) $^ -o $@
 
-%.o: %.c push_swap.h
+%.o: %.c mandatory/push_swap.h
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:

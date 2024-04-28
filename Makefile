@@ -6,12 +6,13 @@
 #    By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/25 19:15:36 by ibouram           #+#    #+#              #
-#    Updated: 2024/04/27 18:39:11 by ibouram          ###   ########.fr        #
+#    Updated: 2024/04/28 09:01:20 by ibouram          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = mandatory/push_swap.c mandatory/utils.c mandatory/parcing.c mandatory/ft_split.c mandatory/lst_fun.c mandatory/mini_algo.c mandatory/big_algo.c mandatory/sa_sb_ss.c mandatory/ra_rb_rr.c mandatory/rra_rrb_rrr.c mandatory/pa_pb.c
 NAME = push_swap
+B_NAME = checker
 
 CC = cc
 FLAGS = -Wall -Wextra -Werror

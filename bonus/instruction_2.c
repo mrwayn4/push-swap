@@ -6,11 +6,11 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 09:36:51 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/28 09:37:49 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/04/28 09:55:44 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
+#include "checker.h"
 
 void	ra(t_stack **a)
 {
@@ -82,10 +82,4 @@ void	rrb(t_stack **b)
 	last->next = *b;
 	*b = last;
 	write(1, "rrb\n", 4);
-}
-
-void	rrr(t_stack **a, t_stack **b)
-{
-	rra(a);
-	rrb(b);
 }

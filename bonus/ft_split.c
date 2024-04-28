@@ -6,11 +6,11 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 09:27:54 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/28 09:28:25 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/04/28 09:52:23 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
+#include "checker.h"
 
 static char	**free_memory(char **result, int sub)
 {

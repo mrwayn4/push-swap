@@ -6,11 +6,11 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 09:35:58 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/28 09:36:45 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/04/28 09:52:34 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
+#include "checker.h"
 
 void	sa(t_stack **a)
 {

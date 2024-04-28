@@ -6,11 +6,11 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 19:56:59 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/27 18:42:52 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/04/28 09:52:27 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
+#include "checker.h"
 
 size_t	ft_strlen(char *s)
 {

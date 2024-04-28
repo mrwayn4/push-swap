@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_fun_bonus.c                                    :+:      :+:    :+:   */
+/*   lst_fun_.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 09:31:31 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/28 09:39:29 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/04/28 10:23:42 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
+#include "checker.h"
 
 t_stack	*ft_lstnew(int content)
 {
@@ -48,10 +48,10 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 	else
 		*lst = new;
 }
-void	rrr(t_stack **a, t_stack **b)
+void	rrr(t_stack *a, t_stack *b)
 {
-	rra(a);
-	rrb(b);
+	rra(&a);
+	rrb(&b);
 }
 
 int	ft_lstsize(t_stack *lst)

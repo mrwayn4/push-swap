@@ -6,7 +6,7 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:44:13 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/27 18:35:15 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/04/28 10:24:04 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	rb(t_stack **b);
 void	rr(t_stack *a, t_stack *b);
 void	rra(t_stack **a);
 void	rrb(t_stack **b);
-void	rrr(t_stack **a, t_stack **b);
+void	rrr(t_stack *a, t_stack *b);
 int		max_pos(t_stack *a);
 int		min_pos(t_stack *a);
 void	sort_two(t_stack *a);

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_bonus.c                                    :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:43:12 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/28 09:42:42 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/04/28 10:24:39 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
+#include "checker.h"
 
 int	sorted(t_stack *a)
 {
@@ -29,25 +29,25 @@ int	sorted(t_stack *a)
 void	operations(char *line, t_stack **a, t_stack **b)
 {
 	if (ft_strcmp(line, "sa\n") == 0)
-		sa(*a);
+		sa(a);
 	else if (ft_strcmp(line, "sb\n") == 0)
-		sb(*b);
+		sb(b);
 	else if (ft_strcmp(line, "ss\n") == 0)
 		ss(*a, *b);
 	else if (ft_strcmp(line, "pa\n") == 0)
-		pa(*a, *b);
+		pa(a, b);
 	else if (ft_strcmp(line, "pb\n") == 0)
-		pb(*b, *a);
+		pb(b, a);
 	else if (ft_strcmp(line, "ra\n") == 0)
-		ra(*a);
+		ra(a);
 	else if (ft_strcmp(line, "rb\n") == 0)
-		rb(*b);
+		rb(b);
 	else if (ft_strcmp(line, "rr\n") == 0)
 		rr(*a, *b);
 	else if (ft_strcmp(line, "rra\n") == 0)
-		rra(*a);
+		rra(a);
 	else if (ft_strcmp(line, "rrb\n") == 0)
-		rrb(*b);
+		rrb(b);
 	else if (ft_strcmp(line, "rrr\n") == 0)
 		rrr(*a, *b);
 	else

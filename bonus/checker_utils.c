@@ -6,11 +6,11 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 09:22:28 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/28 09:30:39 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/04/28 09:53:28 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
+#include "checker.h"
 
 int	ft_strcmp(char *s1, char *s2)
 {

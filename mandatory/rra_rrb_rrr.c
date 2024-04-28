@@ -6,7 +6,7 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 11:30:47 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/27 12:04:34 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/04/28 10:23:56 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ void	rrb(t_stack **b)
 	write(1, "rrb\n", 4);
 }
 
-void	rrr(t_stack **a, t_stack **b)
+void	rrr(t_stack *a, t_stack *b)
 {
-	rra(a);
-	rrb(b);
+	rra(&a);
+	rrb(&b);
 }

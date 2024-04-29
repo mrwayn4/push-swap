@@ -6,7 +6,7 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:41:49 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/28 10:27:23 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/04/29 07:32:25 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ char	*ft_read(int fd, char *rest);
 char	*ft_newline(char *rest);
 char	*ft_getline(char *rest);
 size_t	ft_strlen(char *s);
+t_stack	*ft_lstnew(int content);
+t_stack	*ft_lstlast(t_stack *lst);
+int		ft_lstsize(t_stack *lst);
 int		ft_strchr(const char *s1, char c);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strncpy(char *src, char *dst, size_t n);
@@ -45,8 +48,6 @@ int		check_nbr(char *s);
 void	valid_arg(char **av, t_stack **a);
 long	ft_atoi(const char *str);
 void	add_back(t_stack **a, int x);
-t_stack	*ft_lstnew(int content);
-t_stack	*ft_lstlast(t_stack *lst);
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
 void	sa(t_stack **a);
@@ -58,6 +59,5 @@ void	rr(t_stack *a, t_stack *b);
 void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack *a, t_stack *b);
-int		ft_lstsize(t_stack *lst);
 int		sorted(t_stack *a);
 #endif

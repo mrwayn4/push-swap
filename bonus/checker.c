@@ -6,7 +6,7 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:43:12 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/28 10:24:39 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/04/29 21:51:59 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,12 @@ int	main(int ac, char **av)
 	if (ac > 1)
 	{
 		valid_arg(av, &a);
+		line = get_next_line(0);
 		while (line)
 		{
-			line = get_next_line(0);
-			if (line)
-				operations(line, &a, &b);
+			operations(line, &a, &b);
 			free(line);
+			line = get_next_line(0);
 		}
 		if (sorted(a) == 0 && !b)
 			write(1, "OK\n", 3);

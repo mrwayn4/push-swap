@@ -6,7 +6,7 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 09:36:51 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/28 09:55:44 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/04/29 21:55:04 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	ra(t_stack **a)
 		last->next = *a;
 		*a = (*a)->next;
 		last->next->next = NULL;
-		write (1, "ra\n", 3);
 	}
 }
 
@@ -36,7 +35,6 @@ void	rb(t_stack **b)
 		last->next = *b;
 		*b = (*b)->next;
 		last->next->next = NULL;
-		write (1, "rb\n", 3);
 	}
 }
 
@@ -44,7 +42,6 @@ void	rr(t_stack *a, t_stack *b)
 {
 	ra(&a);
 	rb(&b);
-	write (1, "rr\n", 3);
 }
 void	rra(t_stack **a)
 {
@@ -62,7 +59,6 @@ void	rra(t_stack **a)
 	tmp->next = NULL;
 	last->next = *a;
 	*a = last;
-	write(1, "rra\n", 4);
 }
 
 void	rrb(t_stack **b)
@@ -81,5 +77,4 @@ void	rrb(t_stack **b)
 	tmp->next = NULL;
 	last->next = *b;
 	*b = last;
-	write(1, "rrb\n", 4);
 }

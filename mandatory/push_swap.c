@@ -6,7 +6,7 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:43:53 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/28 08:15:54 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/06/07 00:41:18 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,15 @@ int	sorted(t_stack *a)
 	}
 	return (0);
 }
+//check leaks
+void f(void)
+{
+	system("leaks push_swap");
+}
 
 int	main(int ac, char **av)
 {
+	atexit(f);
 	t_stack	*a;
 	t_stack	*b;
 

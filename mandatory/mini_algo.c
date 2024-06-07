@@ -6,7 +6,7 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 11:31:41 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/27 17:15:56 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/06/07 01:14:01 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,27 @@ void	sort_four_five(t_stack **a, t_stack **b)
 	pa(a, b);
 }
 
+void	free_list(t_stack **a)
+{
+	t_stack *aa;
+	t_stack	*tmp;
+
+	aa = *a;
+	while (aa)
+	{
+		tmp = aa;
+		aa = aa->next;
+		free(tmp);
+	}
+}
+
 void	sort(t_stack **a, t_stack **b)
 {
 	if (ft_lstsize(*a) == 1)
+	{
+		free_list(a);
 		exit(0);
+	}
 	if (ft_lstsize(*a) == 2)
 		sort_two(*a);
 	else if (ft_lstsize(*a) == 3)
@@ -85,4 +102,6 @@ void	sort(t_stack **a, t_stack **b)
 		push_to_b(a, b, 0, 0);
 		push_to_a(a, b, 0, 0);
 	}
+	free_list(a);
+	free_list(b);
 }

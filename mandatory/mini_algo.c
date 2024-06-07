@@ -6,7 +6,7 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 11:31:41 by ibouram           #+#    #+#             */
-/*   Updated: 2024/06/07 01:30:10 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/06/07 02:42:14 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	sort_four_five(t_stack **a, t_stack **b)
 
 void	free_list(t_stack **a)
 {
-	t_stack *aa;
+	t_stack	*aa;
 	t_stack	*tmp;
 
 	aa = *a;

@@ -6,7 +6,7 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 09:35:58 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/29 22:26:01 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/06/07 02:41:41 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	ss(t_stack *a, t_stack *b)
 	sa(&a);
 	sb(&b);
 }
+
 void	pa(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;

@@ -6,7 +6,7 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 09:22:28 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/28 09:53:28 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/06/07 02:41:20 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	ft_strcmp(char *s1, char *s2)
 		i++;
 	return (s1[i] - s2[i]);
 }
+
 void	ft_error(void)
 {
 	write(2, "Error\n", 6);

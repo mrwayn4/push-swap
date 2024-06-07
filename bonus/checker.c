@@ -6,7 +6,7 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:43:12 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/29 21:51:59 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/06/07 02:01:35 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	sorted(t_stack *a)
 	t_stack	*tmp;
 
 	tmp = a;
-	while (tmp->next)
+	while (tmp && tmp->next)
 	{
 		if (tmp->value > tmp->next->value)
 			return (1);
@@ -37,7 +37,7 @@ void	operations(char *line, t_stack **a, t_stack **b)
 	else if (ft_strcmp(line, "pa\n") == 0)
 		pa(a, b);
 	else if (ft_strcmp(line, "pb\n") == 0)
-		pb(b, a);
+		pb(a, b);
 	else if (ft_strcmp(line, "ra\n") == 0)
 		ra(a);
 	else if (ft_strcmp(line, "rb\n") == 0)
@@ -73,7 +73,7 @@ int	main(int ac, char **av)
 			free(line);
 			line = get_next_line(0);
 		}
-		if (sorted(a) == 0 && !b)
+		if (sorted(a) == 0 && ft_lstsize(b) == 0)
 			write(1, "OK\n", 3);
 		else
 			write(1, "KO\n", 3);

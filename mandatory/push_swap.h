@@ -6,7 +6,7 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:44:13 by ibouram           #+#    #+#             */
-/*   Updated: 2024/06/07 00:48:54 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/06/07 01:53:01 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_stack
 char	**ft_split(const char *s, char c);
 void	ft_error(void);
 void	ft_free(char **s);
+void	err_free(char **s);
 void	valid_arg(char **av, t_stack **a);
 long	ft_atoi(const char *str);
 int		check_nbr(char *s);
@@ -49,8 +50,8 @@ void	rrb(t_stack **b);
 void	rrr(t_stack *a, t_stack *b);
 int		max_pos(t_stack *a);
 int		min_pos(t_stack *a);
-void	sort_two(t_stack *a);
-void	sort_three(t_stack *a);
+void	sort_two(t_stack **a);
+void	sort_three(t_stack **a);
 void	sort_four_five(t_stack **a, t_stack **b);
 void	push_to_b(t_stack **a, t_stack **b, int i, int x);
 void	push_to_a(t_stack **a, t_stack **b, int i, int x);

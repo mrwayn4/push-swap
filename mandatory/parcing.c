@@ -6,7 +6,7 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 16:25:40 by ibouram           #+#    #+#             */
-/*   Updated: 2024/06/07 00:52:32 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/06/07 02:04:04 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ void	ft_free(char **s)
 		i++;
 	}
 	free(s);
+}
+
+void	err_free(char **s)
+{
+	ft_free(s);
+	ft_error();
 }
 
 void	check_dup(t_stack *a)
@@ -77,18 +83,12 @@ void	valid_arg(char **av, t_stack **a)
 	{
 		s = ft_split(av[i], ' ');
 		if (!s || !s[0])
-		{
-			ft_free(s);
-			ft_error();
-		}
+			err_free(s);
 		while (s[j])
 		{
 			x = ft_atoi(s[j]);
 			if (check_nbr(s[j]) || x < -2147483648 || x > 2147483647)
-			{
-				ft_free(s);
-				ft_error();
-			}
+				err_free(s);
 			add_back(a, x);
 			j++;
 		}

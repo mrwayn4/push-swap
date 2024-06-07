@@ -1,16 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parcing_bonus.c                                    :+:      :+:    :+:   */
+/*   parcing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 09:26:29 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/28 09:52:57 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/06/07 02:04:34 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+
+void	ft_free(char **s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		free(s[i]);
+		i++;
+	}
+	free(s);
+}
+
+void	err_free(char **s)
+{
+	ft_free(s);
+	ft_error();
+}
 
 void	check_dup(t_stack *a)
 {
@@ -64,17 +83,18 @@ void	valid_arg(char **av, t_stack **a)
 	{
 		s = ft_split(av[i], ' ');
 		if (!s || !s[0])
-			ft_error();
+			err_free(s);
 		while (s[j])
 		{
 			x = ft_atoi(s[j]);
 			if (check_nbr(s[j]) || x < -2147483648 || x > 2147483647)
-				ft_error();
+				err_free(s);
 			add_back(a, x);
 			j++;
 		}
 		j = 0;
 		i++;
+		ft_free(s);
 	}
 	check_dup(*a);
 }

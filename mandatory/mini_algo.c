@@ -6,40 +6,40 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 11:31:41 by ibouram           #+#    #+#             */
-/*   Updated: 2024/06/07 01:14:01 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/06/07 01:30:10 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_two(t_stack *a)
+void	sort_two(t_stack **a)
 {
-	sa(&a);
+	sa(a);
 }
 
-void	sort_three(t_stack *a)
+void	sort_three(t_stack **a)
 {
 	int	max;
 	int	min;
 
-	max = max_pos(a);
-	min = min_pos(a);
+	max = max_pos(*a);
+	min = min_pos(*a);
 	if (max == 0 && min == 1)
-		ra(&a);
+		ra(a);
 	else if (max == 0 && min == 2)
 	{
-		sa(&a);
-		rra(&a);
+		sa(a);
+		rra(a);
 	}
 	else if (max == 1 && min == 2)
-		rra(&a);
+		rra(a);
 	else if (max == 1 && min == 0)
 	{
-		rra(&a);
-		sa(&a);
+		rra(a);
+		sa(a);
 	}
 	else if (max == 2 && min == 1)
-		sa(&a);
+		sa(a);
 }
 
 void	sort_four_five(t_stack **a, t_stack **b)
@@ -64,7 +64,7 @@ void	sort_four_five(t_stack **a, t_stack **b)
 				ra(a);
 		}
 	}
-	sort_three(*a);
+	sort_three(a);
 	pa(a, b);
 	pa(a, b);
 }
@@ -91,9 +91,9 @@ void	sort(t_stack **a, t_stack **b)
 		exit(0);
 	}
 	if (ft_lstsize(*a) == 2)
-		sort_two(*a);
+		sort_two(a);
 	else if (ft_lstsize(*a) == 3)
-		sort_three(*a);
+		sort_three(a);
 	else if (ft_lstsize(*a) == 4 || ft_lstsize(*a) == 5)
 		sort_four_five(a, b);
 	else

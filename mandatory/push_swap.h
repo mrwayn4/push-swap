@@ -6,7 +6,7 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:44:13 by ibouram           #+#    #+#             */
-/*   Updated: 2024/06/13 15:59:24 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/06/13 22:36:37 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_error(void);
 void	ft_free(char **s);
 void	err_free(char **s);
 void	valid_arg(char **av, t_stack **a);
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 int		check_nbr(char *s);
 void	check_dup(t_stack *a);
 void	add_back(t_stack **a, int x);

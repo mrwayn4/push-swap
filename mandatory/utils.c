@@ -6,7 +6,7 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:13:54 by ibouram           #+#    #+#             */
-/*   Updated: 2024/06/13 15:20:44 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/06/13 22:37:13 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ void	ft_error(void)
 	exit(0);
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	int		i;
 	int		sign;
-	int		res;
+	long	res;
 
 	i = 0;
 	sign = 1;

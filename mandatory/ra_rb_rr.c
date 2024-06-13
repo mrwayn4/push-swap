@@ -6,7 +6,7 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 11:28:17 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/27 12:10:11 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/06/13 15:55:29 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	ra(t_stack **a)
 
 	if (*a && (*a)->next)
 	{
-		last = ft_lstlast(*a);
-		last->next = *a;
-		*a = (*a)->next;
-		last->next->next = NULL;
+		ft_lstlast(*a)->next = *a;
+		last = (*a)->next;
+		(*a)->next = NULL;
+		*a = last;
 		write (1, "ra\n", 3);
 	}
 }
@@ -32,17 +32,17 @@ void	rb(t_stack **b)
 
 	if (*b && (*b)->next)
 	{
-		last = ft_lstlast(*b);
-		last->next = *b;
-		*b = (*b)->next;
-		last->next->next = NULL;
+		ft_lstlast(*b)->next = *b;
+		last = (*b)->next;
+		(*b)->next = NULL;
+		*b = last;
 		write (1, "rb\n", 3);
 	}
 }
 
-void	rr(t_stack *a, t_stack *b)
+void	rr(t_stack **a, t_stack **b)
 {
-	ra(&a);
-	rb(&b);
+	ra(a);
+	rb(b);
 	write (1, "rr\n", 3);
 }

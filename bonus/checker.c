@@ -6,7 +6,7 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:43:12 by ibouram           #+#    #+#             */
-/*   Updated: 2024/06/07 02:01:35 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/06/13 16:22:33 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int	sorted(t_stack *a)
 void	operations(char *line, t_stack **a, t_stack **b)
 {
 	if (ft_strcmp(line, "sa\n") == 0)
-		sa(a);
+		sa(*a);
 	else if (ft_strcmp(line, "sb\n") == 0)
-		sb(b);
+		sb(*b);
 	else if (ft_strcmp(line, "ss\n") == 0)
 		ss(*a, *b);
 	else if (ft_strcmp(line, "pa\n") == 0)
@@ -43,13 +43,13 @@ void	operations(char *line, t_stack **a, t_stack **b)
 	else if (ft_strcmp(line, "rb\n") == 0)
 		rb(b);
 	else if (ft_strcmp(line, "rr\n") == 0)
-		rr(*a, *b);
+		rr(a, b);
 	else if (ft_strcmp(line, "rra\n") == 0)
 		rra(a);
 	else if (ft_strcmp(line, "rrb\n") == 0)
 		rrb(b);
 	else if (ft_strcmp(line, "rrr\n") == 0)
-		rrr(*a, *b);
+		rrr(a, b);
 	else
 		ft_error();
 }

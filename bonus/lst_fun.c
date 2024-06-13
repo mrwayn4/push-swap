@@ -6,20 +6,20 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 09:31:31 by ibouram           #+#    #+#             */
-/*   Updated: 2024/06/07 02:41:58 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/06/13 15:46:05 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-t_stack	*ft_lstnew(int content)
+t_stack	*ft_lstnew(int value)
 {
 	t_stack	*x;
 
 	x = malloc(sizeof(t_stack));
 	if (x == 0)
 		exit(1);
-	x ->value = content;
+	x ->value = value;
 	x ->next = NULL;
 	return (x);
 }
@@ -49,10 +49,10 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 		*lst = new;
 }
 
-void	rrr(t_stack *a, t_stack *b)
+void	ss(t_stack *a, t_stack *b)
 {
-	rra(&a);
-	rrb(&b);
+	sa(a);
+	sb(b);
 }
 
 int	ft_lstsize(t_stack *lst)

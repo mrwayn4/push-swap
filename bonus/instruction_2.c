@@ -6,11 +6,35 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 09:36:51 by ibouram           #+#    #+#             */
-/*   Updated: 2024/06/07 02:41:49 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/06/13 15:46:26 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+
+void	pa(t_stack **a, t_stack **b)
+{
+	t_stack	*tmp;
+
+	if (*b == NULL)
+		return ;
+	tmp = *b;
+	*b = (*b)->next;
+	tmp->next = *a;
+	*a = tmp;
+}
+
+void	pb(t_stack **a, t_stack **b)
+{
+	t_stack	*tmp;
+
+	if (*a == NULL)
+		return ;
+	tmp = *a;
+	*a = (*a)->next;
+	tmp->next = *b;
+	*b = tmp;
+}
 
 void	ra(t_stack **a)
 {
@@ -18,10 +42,10 @@ void	ra(t_stack **a)
 
 	if (*a && (*a)->next)
 	{
-		last = ft_lstlast(*a);
-		last->next = *a;
-		*a = (*a)->next;
-		last->next->next = NULL;
+		ft_lstlast(*a)->next = *a;
+		last = (*a)->next;
+		(*a)->next = NULL;
+		*a = last;
 	}
 }
 
@@ -31,51 +55,15 @@ void	rb(t_stack **b)
 
 	if (*b && (*b)->next)
 	{
-		last = ft_lstlast(*b);
-		last->next = *b;
-		*b = (*b)->next;
-		last->next->next = NULL;
+		ft_lstlast(*b)->next = *b;
+		last = (*b)->next;
+		(*b)->next = NULL;
+		*b = last;
 	}
 }
 
-void	rr(t_stack *a, t_stack *b)
+void	rr(t_stack **a, t_stack **b)
 {
-	ra(&a);
-	rb(&b);
-}
-
-void	rra(t_stack **a)
-{
-	t_stack	*last;
-	t_stack	*tmp;
-	int		size;
-
-	size = ft_lstsize(*a);
-	if (size < 2)
-		return ;
-	tmp = *a;
-	while (tmp->next->next)
-		tmp = tmp->next;
-	last = tmp->next;
-	tmp->next = NULL;
-	last->next = *a;
-	*a = last;
-}
-
-void	rrb(t_stack **b)
-{
-	t_stack	*last;
-	t_stack	*tmp;
-	int		size;
-
-	size = ft_lstsize(*b);
-	if (size < 2)
-		return ;
-	tmp = *b;
-	while (tmp->next->next)
-		tmp = tmp->next;
-	last = tmp->next;
-	tmp->next = NULL;
-	last->next = *b;
-	*b = last;
+	ra(a);
+	rb(b);
 }

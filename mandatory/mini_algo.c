@@ -6,7 +6,7 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 11:31:41 by ibouram           #+#    #+#             */
-/*   Updated: 2024/06/07 02:42:14 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/06/13 16:05:11 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sort_two(t_stack **a)
 {
-	sa(a);
+	sa(*a);
 }
 
 void	sort_three(t_stack **a)
@@ -28,7 +28,7 @@ void	sort_three(t_stack **a)
 		ra(a);
 	else if (max == 0 && min == 2)
 	{
-		sa(a);
+		sa(*a);
 		rra(a);
 	}
 	else if (max == 1 && min == 2)
@@ -36,10 +36,10 @@ void	sort_three(t_stack **a)
 	else if (max == 1 && min == 0)
 	{
 		rra(a);
-		sa(a);
+		sa(*a);
 	}
 	else if (max == 2 && min == 1)
-		sa(a);
+		sa(*a);
 }
 
 void	sort_four_five(t_stack **a, t_stack **b)

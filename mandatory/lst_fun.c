@@ -6,20 +6,20 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 09:37:31 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/27 18:29:13 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/06/13 15:41:38 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_lstnew(int content)
+t_stack	*ft_lstnew(int value)
 {
 	t_stack	*x;
 
 	x = malloc(sizeof(t_stack));
 	if (x == 0)
 		exit(1);
-	x ->value = content;
+	x ->value = value;
 	x ->next = NULL;
 	return (x);
 }

@@ -6,70 +6,76 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 09:35:58 by ibouram           #+#    #+#             */
-/*   Updated: 2024/06/07 02:41:41 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/06/13 15:46:18 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	sa(t_stack **a)
+void	rra(t_stack **a)
 {
-	int		size;
+	t_stack	*last;
 	t_stack	*tmp;
+	int		size;
 
 	size = ft_lstsize(*a);
 	if (size < 2)
 		return ;
 	tmp = *a;
-	*a = (*a)->next;
-	tmp->next = (*a)->next;
-	(*a)->next = tmp;
+	while (tmp->next->next)
+		tmp = tmp->next;
+	last = tmp->next;
+	tmp->next = NULL;
+	last->next = *a;
+	*a = last;
 }
 
-void	sb(t_stack **b)
+void	rrb(t_stack **b)
 {
-	int		size;
+	t_stack	*last;
 	t_stack	*tmp;
+	int		size;
 
 	size = ft_lstsize(*b);
 	if (size < 2)
 		return ;
 	tmp = *b;
-	*b = (*b)->next;
-	tmp->next = (*b)->next;
-	(*b)->next = tmp;
+	while (tmp->next->next)
+		tmp = tmp->next;
+	last = tmp->next;
+	tmp->next = NULL;
+	last->next = *b;
+	*b = last;
 }
 
-void	ss(t_stack *a, t_stack *b)
+void	rrr(t_stack **a, t_stack **b)
 {
-	sa(&a);
-	sb(&b);
+	rra(a);
+	rrb(b);
 }
 
-void	pa(t_stack **a, t_stack **b)
+void	sa(t_stack *a)
 {
-	t_stack	*tmp;
+	int	tmp;
+	int	size;
 
-	tmp = *b;
-	if (*b != NULL)
-	{
-		*b = (*b)->next;
-		tmp->next = *a;
-		*a = tmp;
-	}
-	return ;
+	size = ft_lstsize(a);
+	if (size < 2)
+		return ;
+	tmp = a->value;
+	a->value = a->next->value;
+	a->next->value = tmp;
 }
 
-void	pb(t_stack **a, t_stack **b)
+void	sb(t_stack *b)
 {
-	t_stack	*tmp;
+	int	tmp;
+	int	size;
 
-	tmp = *a;
-	if (*a != NULL)
-	{
-		*a = (*a)->next;
-		tmp->next = *b;
-		*b = tmp;
-	}
-	return ;
+	size = ft_lstsize(b);
+	if (size < 2)
+		return ;
+	tmp = b->value;
+	b->value = b->next->value;
+	b->next->value = tmp;
 }

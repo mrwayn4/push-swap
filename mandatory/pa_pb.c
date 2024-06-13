@@ -6,7 +6,7 @@
 /*   By: ibouram <ibouram@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 11:21:25 by ibouram           #+#    #+#             */
-/*   Updated: 2024/04/27 12:05:03 by ibouram          ###   ########.fr       */
+/*   Updated: 2024/06/13 16:23:38 by ibouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,24 @@ void	pa(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
 
+	if (*b == NULL)
+		return ;
 	tmp = *b;
-	if (*b != NULL)
-	{
-		*b = (*b)->next;
-		tmp->next = *a;
-		*a = tmp;
-		write(1, "pa\n", 3);
-	}
-	return ;
+	*b = (*b)->next;
+	tmp->next = *a;
+	*a = tmp;
+	write (1, "pa\n", 3);
 }
 
 void	pb(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
 
+	if (*a == NULL)
+		return ;
 	tmp = *a;
-	if (*a != NULL)
-	{
-		*a = (*a)->next;
-		tmp->next = *b;
-		*b = tmp;
-		write(1, "pb\n", 3);
-	}
-	return ;
+	*a = (*a)->next;
+	tmp->next = *b;
+	*b = tmp;
+	write (1, "pb\n", 3);
 }
